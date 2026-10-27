@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DrayDesk Plans</title>
+<meta name="description" content="Stop paying demurrage and per diem you could have seen coming. $15 per truck per month.">
+<meta name="theme-color" content="#23303f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="./" aria-label="DrayDesk board">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="8" width="28" height="16" rx="2" fill="#e8590c"/><path d="M7 11v10M12 11v10M17 11v10M22 11v10M27 11v10" stroke="#23303f" stroke-width="1.6"/></svg>
+    DrayDesk
+  </a>
+  <span class="spacer"></span>
+  <nav><a href="./">Open the board</a></nav>
+</header>
+
+<main class="page">
+  <section class="hero">
+    <span class="pill warn">For owner-operators and 1-25 truck dray fleets</span>
+    <h1>Every box has a clock.<br><em>DrayDesk puts a dollar sign on it.</em></h1>
+    <p>Last Free Day, demurrage tiers, terminal appointment and empty-return deadline for every container, sorted by what costs you the most if it slips. One screen. No more finding out from the invoice.</p>
+    <div class="receipt" aria-label="Example of a missed week">
+      <div><span>MSCU1234566 · 2 days past LFD</span><span>$450</span></div>
+      <div><span>CMAU3141590 · empty 3 days late</span><span>$495</span></div>
+      <div><span>HLXU2718283 · chassis split, 1 day</span><span>$200</span></div>
+      <div class="tot"><span>One bad week</span><span>$1,145</span></div>
+    </div>
+    <p style="font-size:16px">DrayDesk for one truck is <b>$15 a month</b>. A single avoided demurrage day ($150 to $400 at most U.S. terminals) pays for the year.</p>
+    <div class="actions"><button class="btn primary" type="button" data-start="pro">Start for $15/truck</button><a class="btn" href="./">Try the board free</a></div>
+  </section>
+
+  <section class="plans" aria-label="Plans">
+    <div class="plan">
+      <h3>Board</h3>
+      <div class="price">$0</div>
+      <ul><li>Unlimited containers on this device</li><li>Demurrage + per diem math in dollars</li><li>Next-move card, CSV import/export</li></ul>
+      <a class="btn" href="./">Open the board</a>
+    </div>
+    <div class="plan feature">
+      <h3>Owner-Op Pro</h3>
+      <div class="price">$<span data-price>15</span><small> /truck /month</small></div>
+      <ul><li>Everything in Board</li><li>Your terminals' and lines' free days and tiers loaded for you</li><li>Evening-before text when an LFD or return-by is next day (set up by hand while we're in early access)</li><li>Native iPhone app with the Duo two-pane layout when it ships (early-access price stays)</li></ul>
+      <button class="btn primary" type="button" data-start="pro">Start</button>
+    </div>
+    <div class="plan">
+      <h3>Pilot for fleets</h3>
+      <div class="price">$99<small> first month, up to 10 trucks</small></div>
+      <ul><li>I load your open containers for you</li><li>Morning CSV of the day's moves you can text to drivers</li><li>Weekly "fees avoided" report</li><li>If it doesn't save you more than $99, you don't pay</li></ul>
+      <button class="btn" type="button" data-start="pilot">Start pilot</button>
+    </div>
+  </section>
+
+  <section class="req" id="request" hidden>
+    <h2 style="font-family:var(--head);text-transform:uppercase">Request access</h2>
+    <p class="notice" id="reqNote">Checkout is opening soon. Send this and you get set up by hand today, billed after your first week.</p>
+    <form id="reqForm">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Company / MC #<input name="company" autocomplete="organization"></label>
+      <label>Phone or email<input name="reach" required></label>
+      <label>Trucks<input name="trucks" type="number" min="1" value="1" inputmode="numeric"></label>
+      <label>Port / ramps you work<input name="port" placeholder="NY/NJ, Savannah, LA/LB, Houston..."></label>
+      <input type="hidden" name="plan" value="pro">
+      <div class="actions"><button class="btn primary" type="submit" id="reqSend">Send request</button></div>
+      <p class="hint" id="reqHint"></p>
+    </form>
+  </section>
+
+  <section class="faq">
+    <h3>Does it pull terminal status automatically?</h3>
+    <p>Not yet. You (or we, on the pilot) type the Last Free Day and return-by date from the terminal or line site. It takes about 20 seconds a box, and the math and ranking are what save the money.</p>
+    <h3>Where is my data?</h3>
+    <p>On your phone or browser. Nothing is uploaded. Export to CSV any time.</p>
+    <h3>Why per truck?</h3>
+    <p>Your container count changes every week. Your truck count doesn't. Cancel any month.</p>
+  </section>
+</main>
+<footer class="foot">DrayDesk · rates shown are examples; your line and terminal tariffs decide the real numbers.</footer>
+<script src="config.js"></script>
+<script src="pricing.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DrayDesk Container Board</title>
+<meta name="description" content="Last free day, per diem and demurrage clocks in dollars for every container you haul. Built for owner-operators and small dray fleets.">
+<meta name="theme-color" content="#23303f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="./" aria-label="DrayDesk home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="8" width="28" height="16" rx="2" fill="#e8590c"/><path d="M7 11v10M12 11v10M17 11v10M22 11v10M27 11v10" stroke="#23303f" stroke-width="1.6"/></svg>
+    DrayDesk
+  </a>
+  <span class="spacer"></span>
+  <nav>
+    <button type="button" id="addTop">+ Container</button>
+    <a class="cta" href="pricing.html">Plans</a>
+  </nav>
+</header>
+
+<main class="app">
+  <section class="list-pane" aria-label="Container board">
+    <div class="totals" id="totals"></div>
+    <div id="next"></div>
+    <div class="list-head">
+      <h2>Board</h2>
+      <button class="btn small" type="button" id="exportBtn" title="Download CSV">Export</button>
+      <label class="btn small" style="display:inline-block;text-transform:none;letter-spacing:0;color:inherit;font-size:13px" title="Import CSV">Import<input type="file" id="importFile" accept=".csv,text/csv" hidden></label>
+    </div>
+    <div class="filters" role="group" aria-label="Filter">
+      <button class="chip" data-f="active" aria-pressed="true">Active</button>
+      <button class="chip" data-f="terminal" aria-pressed="false">At terminal</button>
+      <button class="chip" data-f="out" aria-pressed="false">Out loaded</button>
+      <button class="chip" data-f="empty" aria-pressed="false">Empty</button>
+      <button class="chip" data-f="returned" aria-pressed="false">Returned</button>
+    </div>
+    <ul class="rows" id="rows"></ul>
+    <p id="sampleNote" class="hint" hidden style="margin-top:12px">These are sample containers so you can see how it works. <button class="btn small" id="clearSamples" type="button">Clear samples</button></p>
+  </section>
+  <section class="detail-pane" id="detailPane" aria-label="Container detail"></section>
+</main>
+
+<button class="btn primary fab" type="button" id="addFab">+ Container</button>
+<dialog class="sheet" id="sheet"><button class="btn small sheet-close" type="button" id="sheetClose">Close</button><div id="sheetBody"></div></dialog>
+
+<footer class="foot">Data stays on this device (browser storage). Rates and free days vary by line and terminal: enter yours. <a href="pricing.html">Plans</a></footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

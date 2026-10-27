@@ -1,0 +1,13 @@
+{
+  "name": "DrayDesk Container Board",
+  "short_name": "DrayDesk",
+  "description": "Last free day, per diem and demurrage clocks in dollars for every container.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef0ea",
+  "theme_color": "#23303f",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
